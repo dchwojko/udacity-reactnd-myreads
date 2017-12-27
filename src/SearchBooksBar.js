@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-//import * as BooksAPI from './BooksAPI'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class SearchBooksBar extends Component {
   state = {
     query: ''
-  }
+  };
 
   updateQuery(query) {
-    //let trimmedQuery = query.trim()
-    this.setState({query: query})
-    this.props.searchBooks(query)
+    this.setState({query: query});
+    this.props.searchBooks(query);
   }
     render() {
         return (
@@ -33,4 +31,4 @@ class SearchBooksBar extends Component {
     }
 }
 
-export default SearchBooksBar
+export default SearchBooksBar;

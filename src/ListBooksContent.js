@@ -1,15 +1,15 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
-import Bookshelf from './Bookshelf'
-import * as BooksAPI from './BooksAPI'
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+import Bookshelf from './Bookshelf';
+import * as BooksAPI from './BooksAPI';
 
 class ListBooksContent extends Component {
     state = {
         books: []
-    }
+    };
 
     componentDidMount() {
-        this.getAllBooks()
+        this.getAllBooks();
     }
 
     getBooksByBookshelf(bookshelf) {
@@ -18,11 +18,11 @@ class ListBooksContent extends Component {
     }
 
     updateBookshelf = (event, book) => {
-        BooksAPI.update(book, event.target.value).then( () => { this.getAllBooks() } )
+        BooksAPI.update(book, event.target.value).then( () => { this.getAllBooks(); } );
     }
 
     getAllBooks() {
-        BooksAPI.getAll().then( (books) => this.setState({books: books}) )
+        BooksAPI.getAll().then( (books) => this.setState({books: books}) );
     }
 
     render() {
@@ -43,5 +43,5 @@ class ListBooksContent extends Component {
     }
 }
 
-export default ListBooksContent
+export default ListBooksContent;
 

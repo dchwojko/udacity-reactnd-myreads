@@ -1,20 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
 
 class Book extends Component {
     
     state = {
         currentBookshelf: this.props.book.shelf ? this.props.book.shelf : 'none'
-    }
+    };
 
     updateBookshelf(event) {
-        this.setState({currentBookshelf: event.target.value})
-        this.props.updateBookshelf(event, this.props.book)
+        this.setState({currentBookshelf: event.target.value});
+        this.props.updateBookshelf(event, this.props.book);
     }
 
     render() {
-        const {book} = this.props
-        const cover = book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : ''
+        const {book} = this.props;
+        const cover = book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : '';
         
         return (
             <div className="book">
@@ -37,4 +37,4 @@ class Book extends Component {
     }
 }
 
-export default Book
+export default Book;

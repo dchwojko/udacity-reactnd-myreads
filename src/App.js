@@ -1,8 +1,8 @@
-import React from 'react'
-import './App.css'
-import { Route } from 'react-router-dom'
-import ListBooksPage from './ListBooksPage'
-import SearchPage from './SearchPage'
+import React from 'react';
+import './App.css';
+import { Route } from 'react-router-dom';
+import ListBooksPage from './ListBooksPage';
+import SearchPage from './SearchPage';
 
 class BooksApp extends React.Component {
   render() {
@@ -15,4 +15,4 @@ class BooksApp extends React.Component {
   }
 }
 
-export default BooksApp
+export default BooksApp;

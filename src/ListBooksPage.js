@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import ListBooksTitle from './ListBooksTitle'
-import ListBooksContent from './ListBooksContent'
+import React, { Component } from 'react';
+import ListBooksTitle from './ListBooksTitle';
+import ListBooksContent from './ListBooksContent';
 
 class ListBooksPage extends Component {
     render() {
@@ -13,4 +13,4 @@ class ListBooksPage extends Component {
     }
 }
 
-export default ListBooksPage 
+export default ListBooksPage;

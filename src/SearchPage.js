@@ -1,29 +1,29 @@
-import React, { Component } from 'react'
-import SearchBooksBar from './SearchBooksBar'
+import React, { Component } from 'react';
+import SearchBooksBar from './SearchBooksBar';
 import SearchBooksResults from './SearchBooksResults';
-import * as BooksAPI from './BooksAPI'
+import * as BooksAPI from './BooksAPI';
 
 class SearchPage extends Component {
     state = {
         books: []   
-    }
+    };
 
     searchBooks = (query) => {
         if (query !== '') {
             BooksAPI.search(query).then( (foundBooks) => {
                 if (foundBooks.length !== 0) {
-                    this.setState({books: foundBooks})
+                    this.setState({books: foundBooks});
                 } else {
-                    this.setState({books: []})
+                    this.setState({books: []});
                 }
-            })
+            });
         } else {
-            this.setState({books: []})
+            this.setState({books: []});
         }
     }
 
     updateBookshelf = (event, book) => {
-        BooksAPI.update(book, event.target.value).then( () => { /* TO DO: Notify user that the associated bookshelf has been updated */ } )
+        BooksAPI.update(book, event.target.value).then( () => { /* TODO: Notify user that the associated bookshelf has been updated */ } )
     }
 
     render() {
@@ -36,4 +36,4 @@ class SearchPage extends Component {
     }
 }
 
-export default SearchPage
+export default SearchPage;

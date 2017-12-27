@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import Book from './Book'
+import React, { Component } from 'react';
+import Book from './Book';
 
 class SearchBooksResults extends Component {
     render() {
@@ -13,4 +13,4 @@ class SearchBooksResults extends Component {
     }
 }
 
-export default SearchBooksResults
+export default SearchBooksResults;
