@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 
 class Book extends Component {
-    
     state = {
         currentBookshelf: this.props.book.shelf ? this.props.book.shelf : 'none'
     };
