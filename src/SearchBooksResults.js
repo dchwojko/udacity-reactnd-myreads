@@ -6,7 +6,7 @@ class SearchBooksResults extends Component {
         return (
             <div className="search-books-results">
                 <ol className="books-grid">
-                    {this.props.books.map((book,index) => { return <li key={index}><Book book={book} updateBookshelf={this.props.updateBookshelf}/></li>})}
+                    {this.props.books.map((book,index) => { return <li key={index}><Book book={book} booksOnShelves={this.props.booksOnShelves} updateBookshelf={this.props.updateBookshelf}/></li>})}
                 </ol>
             </div>
         )

@@ -2,25 +2,40 @@ import React, { Component } from 'react';
 
 
 class Book extends Component {
+    
     state = {
-        currentBookshelf: this.props.book.shelf ? this.props.book.shelf : 'none'
-    };
+        currentBookshelf: ''
+    }
 
     updateBookshelf(event) {
         this.setState({currentBookshelf: event.target.value});
         this.props.updateBookshelf(event, this.props.book);
     }
 
+    getBookshelf() {
+        if (this.props.booksOnShelves.length > 0) {
+            
+            for (let b of this.props.booksOnShelves ) {
+                if (b.id === this.props.book.id)  {
+                    return b.shelf;
+                }
+            }
+        }
+        return 'none';
+    }
+
     render() {
         const {book} = this.props;
         const cover = book.imageLinks && book.imageLinks.thumbnail ? book.imageLinks.thumbnail : '';
         
+        let currentBookshelf = this.state.currentBookshelf ? this.state.currentBookshelf : this.getBookshelf();
+
         return (
             <div className="book">
                 <div className="book-top">
                     <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: "url(" + cover + ")"}}></div>
                     <div className="book-shelf-changer">
-                        <select value={this.state.currentBookshelf} onChange={(event) => this.updateBookshelf(event)}>
+                        <select value={currentBookshelf} onChange={(event) => { this.updateBookshelf(event);}}>
                             <option value="not applicable" disabled>Move to...</option>
                             <option value="currentlyReading">Currently Reading</option>
                             <option value="wantToRead">Want to Read</option>

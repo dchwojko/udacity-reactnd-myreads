@@ -4,9 +4,14 @@ import SearchBooksResults from './SearchBooksResults';
 import * as BooksAPI from './BooksAPI';
 
 class SearchPage extends Component {
-    state = {
-        books: []   
-    };
+    constructor() {
+        super();
+        this.state = {
+            books: [],
+            booksOnShelves: []
+        };
+        BooksAPI.getAll().then( (books) => { this.setState({booksOnShelves: books}); });
+    }
 
     searchBooks = (query) => {
         let trimmedQuery = query.trim()
@@ -31,7 +36,7 @@ class SearchPage extends Component {
         return (
             <div className="search-books">
             <SearchBooksBar searchBooks={this.searchBooks}/>
-            {this.state.books.length > 0 && <SearchBooksResults books={this.state.books} updateBookshelf={this.updateBookshelf}/>}
+            {this.state.books.length > 0 && <SearchBooksResults books={this.state.books} booksOnShelves={this.state.booksOnShelves} updateBookshelf={this.updateBookshelf}/>}
           </div>
         )
     }
